@@ -6,5 +6,5 @@ Esse projeto é um estudo de caso para conclusão do curso de Certificado Profis
 
 O objetivo deste projeto é entender como ciclistas casuais e membros anuais usam as bicicletas Cyclistic de maneira diferente. A partir desses insights, será criado uma nova estratégia de marketing para converter ciclistas casuais em membros anuais.
 
-Para mais detalhes sobre o projeto consulte o documento original do estudo de caso da Google disponível [aqui](./docs/case_study.pdf).
+Para mais detalhes sobre o projeto consulte o documento original do estudo de caso do Google disponível [aqui](./docs/case_study.pdf).
 
