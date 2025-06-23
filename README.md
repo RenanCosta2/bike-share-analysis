@@ -21,4 +21,4 @@ Os dados estão no formato `.csv`, com estrutura tabular — cada arquivo conté
 -   Acesse: <https://divvy-tripdata.s3.amazonaws.com/index.html>
 -   Baixe os arquivos `.csv` de Junho de 2024 até Maio de 2025
     -   Os arquivos seguem a nomenclatura "yyyymm-divvy-tripdata.zip", onde "yyyy" representa o ano e "mm" o mês de referência. Por exemplo: 202408-divvy-tripdata.zip corresponde aos dados de agosto de 2024.
--   Extraia os arquivos `.zip` em uma pasta `data/`
+-   Extraia os arquivos `.zip` em uma pasta `data_raw/`
