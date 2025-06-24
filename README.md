@@ -14,11 +14,31 @@ Os insights obtidos revelarão padrões de comportamento e preferências entre c
 
 ## Descrição dos Dados
 
-Os datasets utilizados nesse projeto estão disponibilizados publicamente pela [Divvy](https://divvy-tripdata.s3.amazonaws.com/index.html).
+Os dados utilizados nesse projeto são disponibilizados publicamente pela [Divvy](https://divvybikes.com/about), o sistema oficial de bicicletas compartilhadas da cidade de Chicago, operado atualmente pela Lyft.
 
-Os dados estão no formato `.csv`, com estrutura tabular — cada arquivo contém observações em linhas e variáveis em colunas. Devido ao seu tamanho, os arquivos não foram incluídos no repositório. Para utilizá-los localmente, siga as intruções abaixo para baixar os datasets:
+A Divvy publica mensalmente dados de viagens para uso público por meio de seu [site oficial](https://divvybikes.com/system-data), sob os termos do seu [Acordo de Licença de Uso dos Dados](https://divvybikes.com/data-license-agreement).
 
--   Acesse: <https://divvy-tripdata.s3.amazonaws.com/index.html>
--   Baixe os arquivos `.csv` de Junho de 2024 até Maio de 2025
+Os arquivos são hospedados em um repositório S3 acessível via [este link direto](https://divvy-tripdata.s3.amazonaws.com/index.html), que foi utilizado como fonte dos dados empregados neste projeto.
+
+### Os Dados
+
+Os dados estão no formato `.csv`, com estrutura tabular — cada arquivo contém observações em linhas e variáveis em colunas.
+
+Cada registro representa uma viagem anonimizada, incluindo::
+
+-   Dia e hora do início da viagem
+-   Dia e hora do fim da viagem
+-   Estação de início da viagem
+-   Estação final da viagem
+-   Tipo de ciclista (membro e casual)
+
+Segundo a Divvy, os dados foram processados para remover viagens feitas pelos funcionários enquanto eles fazem a manutenção e inspecionam o sistema; e qualquer viagem com duração inferior a 60 segundos — consideradas como falsos inícios ou tentativas de reencaixe da bicicleta na estação.
+
+A Divvy disponibiliza dados de viagens desde o início de suas operações em 2013, com atualizações mensais contínuas. Neste projeto, serão utilizados os 12 datasets mais recentes disponíveis até o momento, abrangendo o período de junho de 2024 a maio de 2025.
+
+Devido ao seu tamanho, os arquivos não serão incluídos no repositório. Para utilizá-los localmente, siga as instruções abaixo para baixar os dados:
+
+-   [Acesse os dados do histórico de viagens da Divvy](https://divvy-tripdata.s3.amazonaws.com/index.html)
+-   Baixe os arquivos `.zip` de junho de 2024 até maio de 2025
     -   Os arquivos seguem a nomenclatura "yyyymm-divvy-tripdata.zip", onde "yyyy" representa o ano e "mm" o mês de referência. Por exemplo: 202408-divvy-tripdata.zip corresponde aos dados de agosto de 2024.
 -   Extraia os arquivos `.zip` em uma pasta `data_raw/`
