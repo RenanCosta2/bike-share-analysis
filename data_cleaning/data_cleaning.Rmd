@@ -1,0 +1,246 @@
+---
+title: "data_cleaning"
+author: "Renan Costa"
+output: html_document
+---
+
+# Pré-processamento
+
+Este documento assume que o pacote `tidyverse` já está instalado no ambiente. Caso contrário, instale-o antes de executar os chunks abaixo.
+
+```{r}
+# Carregando os pacotes
+library(tidyverse)
+```
+
+## Import dos dados
+
+Cada um dos datasets utilizados nesse projeto corresponde a um dos meses mais recentes disponíveis até o momento, abrangendo o período de junho de 2024 a maio de 2025. Como esses datasets possuem a mesma estrutura, representando apenas meses diferentes, é mais eficiente juntá-los em um único dataset para facilitar o processamento e a análise.
+
+```{r}
+# Lista todos os arquivos .csv na pasta
+arquivos_csv <- list.files(path = "../data_raw/", pattern = "*.csv", full.names = TRUE)
+
+# Lê e empilha todos os arquivos em um único dataframe
+trip_data <- arquivos_csv %>% 
+  map_dfr(read.csv)
+```
+
+## Exploração dos Dados
+
+Antes de iniciar a limpeza do dataset é fundamental inspecionar a estrutura e os tipos de dados do dataset para identificar possíveis inconsistências. Para isso será utilizado a função `glimpse()` para obter uma visão geral do dataset e, se necessário, realizar alguma transformação.
+
+```{r}
+# Visão geral do dataframe
+glimpse(trip_data)
+```
+
+A partir da visão geral obtida anteriormente, foi identificado uma inconsistência na tipagem das colunas `started_at` e `ended_at`. Embora representem data e hora, ambas estão definidas como strings (`character`), o que inviabiliza operações temporais adequadas.
+
+```{r}
+# Corrigindo o tipo das colunas para representar datas
+trip_data$started_at <- as.POSIXct(trip_data$started_at, format = "%Y-%m-%d %H:%M:%OS", tz = "UTC")
+trip_data$ended_at <- as.POSIXct(trip_data$ended_at, format = "%Y-%m-%d %H:%M:%OS", tz = "UTC")
+```
+
+```{r}
+# Visão geral do dataframe
+glimpse(trip_data)
+```
+
+Como é possível observar na visão geral do dataset acima, as colunas `started_at` e `ended_at` foram convertidas corretamente de `<chr>` para objetos do tipo `POSIXct`, sendo exibidas como `<dttm>` pela função `glimpse()`. Isso confirma que essas variáveis agora estão aptas para operações com data e hora.
+
+# Limpeza dos Dados
+
+Com a estrutura do dataset ajustada e os tipos de dados devidamente corrigidos, inicia-se agora a etapa de limpeza dos dados.
+
+## Intervalo de Datas
+
+Como mencionado anteriormente, os datasets utilizados nesse projeto abrangem o período de junho de 2024 a maio de 2025, portanto, é importante verificar se as colunas de datas estão nesse período.
+
+```{r}
+# Verificando o período das datas
+trip_data %>% 
+  filter(!between(as.Date(started_at), as.Date("2024-06-01"), as.Date("2025-05-31")) |
+           !between(as.Date(ended_at), as.Date("2024-06-01"), as.Date("2025-05-31"))) %>% 
+  select(started_at, ended_at)
+```
+
+A verificação acima demonstra que 211 viagens **iniciaram em 31 de maio de 2024**, indicando que está fora do período determinado. Porém, todas essas viagens **encerraram em 1º de junho de 2024**, que está dentro do intervalo válido, justificando a permanência dessas viagens no dataset.
+
+```{r}
+# Verificando a quantidade de viagens que iniciaram e encerraram fora do período determinado
+trip_data %>% 
+  filter(!between(as.Date(started_at), as.Date("2024-06-01"), as.Date("2025-05-31")) &
+           !between(as.Date(ended_at), as.Date("2024-06-01"), as.Date("2025-05-31"))) %>% 
+  count()
+```
+
+## Dados Ausentes
+
+```{r}
+# Conta a quantidade de dados ausentes em cada coluna
+trip_data %>% 
+  summarise(across(everything(), ~ sum(is.na(.)))) %>% 
+  pivot_longer(cols = everything(), names_to = "variable", values_to = "na_count") %>%
+  arrange(desc(na_count))
+```
+
+A análise acima identificou **12.332** registros faltantes no dataset, onde **6166** registros não possuem valor nas colunas `end_lat` e `end_lng`.
+
+```{r}
+# Identifica o tipo de bicicleta utilizada nos registros com dados ausentes
+trip_data %>% 
+  filter(is.na(end_lat) | is.na(end_lng)) %>% 
+  count(rideable_type)
+```
+
+Ao investigar mais a fundo, foi identificado que todos os registros de dados ausentes ocorreram com bicicletas do tipo `classic_bike`. Como essas observações não possuem informações de término, esses registros serão removidas do dataset por inviabilizarem análises espaciais com precisão.
+
+```{r}
+# Removendo dados ausentes das colunas end_lat e end_lng
+trip_data_clean <- trip_data %>% 
+  drop_na()
+
+# Conta a quantidade de dados ausentes no dataset
+sum(is.na(trip_data_clean))
+```
+
+Além dos dados ausentes analisados anteriormente, é necessário verificar campos que possuem valores inconsistentes, como strings vazias (`""`), que também representam campos incompletos em variáveis do tipo texto.
+
+```{r}
+# Conta a quantidade de valores com strings vazias em cada coluna
+trip_data_clean %>%
+  summarise(across(where(is.character), ~ sum(. == ""))) %>%
+  pivot_longer(cols = everything(), names_to = "variable", values_to = "empty_count") %>%
+  arrange(desc(empty_count))
+```
+
+```{r}
+# Identifica o tipo de bicicleta utilizada nos registros com strings vazias
+trip_data_clean %>% 
+    filter(start_station_name == "" | end_station_name == "") %>% 
+  count(rideable_type)
+```
+
+Ao observar os registros que possuem strings vazias, foi identificado que a maioria das viagens estão associadas ao tipos de `electric_bike` e `electric_scooter`. Esse padrão é consistente com o comportamento das bicicletas e scooters eletrônicos da Divvy, que podem ser trancadas ou liberadas em locais públicos habilitados (fora das estações tradicionais).
+
+Dessa forma, esses registros serão mantidos, pois refletem trajetos válidos dentro do modelo operacional da Divvy.
+
+No entanto, foram identificados 171 registros com strings vazias associados ao tipo `classic_bike`. Como esse tipo de bicicleta só pode ser atracada em estações da Divvy, esses registros são inconsistentes com o modelo operacional da empresa. Portanto, elas serão removidas do dataset por não serem confiáveis para análise.
+
+```{r}
+# Removendo os registros com strings vazias associadas ao tipo de bicicleta "classic_bike"
+trip_data_clean <- trip_data_clean %>% 
+  filter(!
+           (
+             (start_station_name == "" | end_station_name == "") 
+             & rideable_type == "classic_bike"
+           )
+         )
+
+# Tipos de bicicletas com strings vazias
+trip_data_clean %>% 
+  filter(start_station_name == "" | end_station_name == "") %>% 
+  count(rideable_type)
+```
+
+## Variáveis Categóricas
+
+As colunas `rideable_type` e `member_casual` do dataset contêm variáveis categóricas, ou seja, valores predefinidos para seus campos, representando diferentes tipos de bicicletas e perfis de usuários, respectivamente. As categorias de cada coluna são:
+
+-   `rideable_type`: `classic_bike`, `electric_bike`, `electric_scooter`.
+-   `member_casual`: `casual`, `member`.
+
+```{r}
+# Verificando as categorias da coluna "rideable_type"
+trip_data_clean %>% 
+  count(rideable_type)
+```
+
+```{r}
+# Verificando as categorias da coluna "member_casual"
+trip_data_clean %>% 
+  count(member_casual)
+```
+
+A análise das variáveis categóricas indica que os valores estão de acordo com as predefinições.
+
+## Dados Duplicados
+
+```{r}
+# Conta a quantidade de registros duplicados
+sum(duplicated(trip_data_clean))
+```
+
+```{r}
+# Verifica se há IDs de corrida duplicado
+trip_data_clean %>% 
+  count(ride_id) %>% 
+  filter(n > 1)
+```
+
+A verificação de duplicatas indica que não há registros duplicados no dataset, incluindo o identificador único de viagem (`ride_id`), que não apresenta repetições.
+
+## Formatação de Strings
+
+Nas colunas `start_station_name` e `end_station_name` há inconsistências na formatação do nome de algumas estações, com a presença de caracteres extras como "*" e sufixos como "(Temp)", o que impede operações de agrupamento.
+
+Para garantir a uniformidade das colunas essas inconsistências serão removidas.
+
+```{r}
+# Eliminando os caracteres indesejados
+trip_data_clean <- trip_data_clean %>%
+  mutate(start_station_name = start_station_name %>% 
+           str_replace_all("\\*", "") %>% 
+           str_replace_all("(Temp)", "") %>% 
+           str_trim(),
+         
+         end_station_name = end_station_name %>% 
+           str_replace_all("\\*", "") %>% 
+           str_replace_all("(Temp)", "") %>% 
+           str_trim())
+```
+
+## Adição de Colunas
+
+Para realizar a análise desse dataset algumas colunas serão adicionadas para uma melhor estruturação das informações.
+
+A duração das viagens é uma informação extremamente útil para o desenvolvimento da análise desse projeto. Para obter essa informação, é necessário subtrair o dia e horário do início da viagem (`started_at`) pelo dia e horário do fim da viagem (`ended_at`).O resultado desse cálculo será armazenado na coluna `ride_length`, que será adicionada no dataset.
+
+```{r}
+# Adição da  coluna "ride_length" que armazena o resultado do cálculo da duração da viagem
+trip_data_clean <- trip_data_clean %>% 
+  mutate(ride_length_seconds = as.numeric(ended_at - started_at),
+         ride_length = sprintf(
+           "%02d:%02d:%02d",
+           as.integer(ride_length_seconds %/% 3600),
+           as.integer((ride_length_seconds %% 3600) %/% 60),
+           as.integer(ride_length_seconds %% 60)
+         ))
+trip_data_clean %>% 
+  select(started_at, ended_at, ride_length, ride_length_seconds)
+```
+
+Ter o conhecimento acerca do dia da semana que geralmente ocorrem o início das viagens pode ser uma informação relevante para análises do dataset. Essa informação será armazenada na coluna `day_of_week`, que corresponderá ao dia da semana em formato numérico. Note que os dias estão numerados do **1 = Domingo** até o **7 = Sábado**.
+
+```{r}
+# Adição da coluna "day_of_week" para representar os dias da semana
+trip_data_clean <- trip_data_clean %>% 
+  mutate(day_of_week = as.POSIXlt(started_at)$wday + 1,
+         day_of_week_name = weekdays(started_at))
+trip_data_clean %>% 
+  select(started_at, day_of_week, day_of_week_name)
+```
+
+# Salvando o Dataset Tratado
+
+```{r}
+# Cria a pasta "data_clean" caso não existir
+if(!dir.exists("../data_cleaned")){
+  dir.create("../data_cleaned")
+}
+
+# Salvo o dataset tratado dentro da pasta como arquivo CSV
+write.csv(trip_data_clean, "../data_cleaned/trip_data_clean.csv", row.names = FALSE)
+```
