@@ -62,9 +62,14 @@ Para efetuar a limpeza do dataset foram efetuadas as seguintes etapas:
     -   Verificação da duração das viagens
 -   Salvando o Dataset Tratado
 
-O processo completo está documentado no arquivo [`data_cleaning.Rmd`](data_cleaning/data_cleaning.Rmd). Para mais detalhes sobre alterações e decisões, consulte também o [log de mudanças](data_cleaning/changelog.md).
+O processo completo está documentado no arquivo [`data_cleaning.Rmd`](data_cleaning/data_cleaning.Rmd), com a versão renderizada em [.md](data_cleaning/data_cleaning.md). Para mais detalhes sobre alterações e decisões, consulte também o [log de mudanças](data_cleaning/changelog.md).
 
 
-## Exploração e Análise de Dados
 
-Na etapa de limpeza, os datasets mensais foram incorporados em um único dataset, visto que todos possuem a mesma estrutura. O tamanho do arquivo `.csv` gerado 
+
+
+
+
+
+
+
