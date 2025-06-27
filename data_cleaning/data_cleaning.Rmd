@@ -86,7 +86,7 @@ trip_data %>%
   arrange(desc(na_count))
 ```
 
-A análise acima identificou **12.332** registros faltantes no dataset, onde **6166** registros não possuem valor nas colunas `end_lat` e `end_lng`.
+A análise acima identificou **12.332** registros faltantes no dataset, onde **6.166** registros não possuem valor nas colunas `end_lat` e `end_lng`.
 
 ```{r}
 # Identifica o tipo de bicicleta utilizada nos registros com dados ausentes
@@ -231,6 +231,32 @@ trip_data_clean <- trip_data_clean %>%
          day_of_week_name = weekdays(started_at))
 trip_data_clean %>% 
   select(started_at, day_of_week, day_of_week_name)
+```
+
+## Duração das Viagens
+
+De acordo com a Divvy, os dados já haviam sido processados para remover viagens com duração inferior a 60 segundos, alegando possíveis falsos inícios ou tentativas de reencaixe da bicicleta na estação. Após a criação das colunas `ride_length` e `ride_length_seconds`, essa informação pode ser verificada facilmente.
+
+```{r}
+# Conta a quantidade de viagens com duração inferior a 60 segundos
+trip_data_clean %>% 
+  select(started_at, ended_at, ride_length, ride_length_seconds) %>% 
+  filter(ride_length_seconds < 60) %>% 
+  summarise(trips = n())
+```
+
+A análise acima indica que há **123.248 viagens** com duração inferior a 60 segundos no dataset. Para manter a consistência dos dados, esses registros serão removidos.
+
+```{r}
+# Removendo os registros com as viagens inconsistentes
+trip_data_clean <- trip_data_clean %>% 
+  filter(ride_length_seconds > 60)
+
+# Verificando a remoção dos registros
+trip_data_clean %>% 
+  select(started_at, ended_at, ride_length, ride_length_seconds) %>% 
+  filter(ride_length_seconds < 60) %>% 
+  summarise(trips = n())
 ```
 
 # Salvando o Dataset Tratado

@@ -24,7 +24,7 @@ Os arquivos são hospedados em um repositório S3 acessível via [este link dire
 
 Os dados estão no formato `.csv`, com estrutura tabular — cada arquivo contém observações em linhas e variáveis em colunas.
 
-Cada registro representa uma viagem anonimizada, incluindo::
+Cada registro representa uma viagem anonimizada, incluindo:
 
 -   Dia e hora do início da viagem
 -   Dia e hora do fim da viagem
@@ -52,7 +52,6 @@ Para efetuar a limpeza do dataset foram efetuadas as seguintes etapas:
 -   Pré-processamento
     -   Import dos dados
     -   Exploração dos dados
-
 -   Limpeza dos Dados
     -   Verificação do intervalo de datas
     -   Tratamento de dados ausentes
@@ -60,7 +59,7 @@ Para efetuar a limpeza do dataset foram efetuadas as seguintes etapas:
     -   Tratamento de dados duplicados
     -   Formatação de strings
     -   Adição de colunas derivadas
-    
+    -   Verificação da duração das viagens
 -   Salvando o Dataset Tratado
 
 O processo completo está documentado no arquivo [`data_cleaning.Rmd`](data_cleaning/data_cleaning.Rmd). Para mais detalhes sobre alterações e decisões, consulte também o [log de mudanças](data_cleaning/changelog.md).
