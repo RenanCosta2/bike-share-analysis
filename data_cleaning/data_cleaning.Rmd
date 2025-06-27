@@ -2,7 +2,7 @@
 title: "data_cleaning"
 author: "Renan Costa"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: github_document
 ---
 
 # Pré-processamento
