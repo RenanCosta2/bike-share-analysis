@@ -219,7 +219,8 @@ trip_data_clean <- trip_data_clean %>%
            as.integer(ride_length_seconds %% 60)
          ))
 trip_data_clean %>% 
-  select(started_at, ended_at, ride_length, ride_length_seconds)
+  select(started_at, ended_at, ride_length, ride_length_seconds) %>% 
+  head(10)
 ```
 
 Ter o conhecimento acerca do dia da semana que geralmente ocorrem o início das viagens pode ser uma informação relevante para análises do dataset. Essa informação será armazenada na coluna `day_of_week`, que corresponderá ao dia da semana em formato numérico. Note que os dias estão numerados do **1 = Domingo** até o **7 = Sábado**.
@@ -230,7 +231,8 @@ trip_data_clean <- trip_data_clean %>%
   mutate(day_of_week = as.POSIXlt(started_at)$wday + 1,
          day_of_week_name = weekdays(started_at))
 trip_data_clean %>% 
-  select(started_at, day_of_week, day_of_week_name)
+  select(started_at, day_of_week, day_of_week_name) %>% 
+  head(10)
 ```
 
 ## Duração das Viagens
