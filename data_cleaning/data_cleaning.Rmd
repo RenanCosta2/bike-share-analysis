@@ -1,7 +1,8 @@
 ---
 title: "data_cleaning"
 author: "Renan Costa"
-output: html_document
+date: "`r Sys.Date()`"
+output: pdf_document
 ---
 
 # Pré-processamento
@@ -206,7 +207,7 @@ trip_data_clean <- trip_data_clean %>%
 
 Para realizar a análise desse dataset algumas colunas serão adicionadas para uma melhor estruturação das informações.
 
-A duração das viagens é uma informação extremamente útil para o desenvolvimento da análise desse projeto. Para obter essa informação, é necessário subtrair o dia e horário do início da viagem (`started_at`) pelo dia e horário do fim da viagem (`ended_at`).O resultado desse cálculo será armazenado na coluna `ride_length`, que será adicionada no dataset.
+A duração das viagens é uma informação extremamente útil para o desenvolvimento da análise desse projeto. Para obter essa informação, é necessário subtrair o dia e horário do início da viagem (`started_at`) pelo dia e horário do fim da viagem (`ended_at`).O resultado desse cálculo será armazenado na coluna `ride_length`, que será adicionada no dataset no formato "HH:MM:SS" para apresentação, e na coluna `ride_length_seconds`, quem armazenará a duração em segundos para cálculos.
 
 ```{r}
 # Adição da  coluna "ride_length" que armazena o resultado do cálculo da duração da viagem
@@ -223,7 +224,7 @@ trip_data_clean %>%
   head(10)
 ```
 
-Ter o conhecimento acerca do dia da semana que geralmente ocorrem o início das viagens pode ser uma informação relevante para análises do dataset. Essa informação será armazenada na coluna `day_of_week`, que corresponderá ao dia da semana em formato numérico. Note que os dias estão numerados do **1 = Domingo** até o **7 = Sábado**.
+Ter o conhecimento acerca do dia da semana que geralmente ocorrem o início das viagens pode ser uma informação relevante para análises do dataset. Essa informação será armazenada na coluna `day_of_week`, que corresponderá ao dia da semana em formato numérico. Note que os dias estão numerados do **1 = Domingo** até o **7 = Sábado**. A coluna `day_of_week_name` também será adicionada, para facilitar a visualização do dia da semana correspondente.
 
 ```{r}
 # Adição da coluna "day_of_week" para representar os dias da semana
