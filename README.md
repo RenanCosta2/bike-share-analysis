@@ -42,3 +42,25 @@ Devido ao seu tamanho, os arquivos não serão incluídos no repositório. Para 
 -   Baixe os arquivos `.zip` de junho de 2024 até maio de 2025
     -   Os arquivos seguem a nomenclatura "yyyymm-divvy-tripdata.zip", onde "yyyy" representa o ano e "mm" o mês de referência. Por exemplo: 202408-divvy-tripdata.zip corresponde aos dados de agosto de 2024.
 -   Extraia os arquivos `.zip` em uma pasta `data_raw/`
+
+## Pré-processamento e Limpeza de Dados
+
+A etapa de pré-processamento e limpeza de dados foi conduzida com a linguagem R para facilitar a exploração e manipulação dos dados.
+
+Para efetuar a limpeza do dataset foram efetuadas as seguintes etapas:
+
+-   Pré-processamento
+    -   Import dos dados
+    -   Exploração dos dados
+
+-   Limpeza dos Dados
+    -   Verificação do intervalo de datas
+    -   Tratamento de dados ausentes
+    -   Verificação de variáveis categóricas
+    -   Tratamento de dados duplicados
+    -   Formatação de strings
+    -   Adição de colunas derivadas
+    
+-   Salvando o Dataset Tratado
+
+O processo completo está documentado no arquivo [`data_cleaning.Rmd`](data_cleaning/data_cleaning.Rmd). Para mais detalhes sobre alterações e decisões, consulte também o [log de mudanças](data_cleaning/changelog.md).
