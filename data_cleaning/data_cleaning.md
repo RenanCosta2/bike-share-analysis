@@ -1,7 +1,7 @@
-data_cleaning
+Pré-processamento e Limpeza dos Dados
 ================
 Renan Costa
-2025-06-27
+2025-07-02
 
 # Pré-processamento
 
@@ -669,6 +669,45 @@ trip_data_clean <- trip_data_clean %>%
 trip_data_clean %>% 
   select(started_at, ended_at, ride_length, ride_length_seconds) %>% 
   filter(ride_length_seconds < 60) %>% 
+  summarise(trips = n())
+```
+
+    ##   trips
+    ## 1     0
+
+Além das inconsistências relacionadas às viagens de curta duração,
+também é imprescindível verificar a existência de viagens com durações
+mais longas que o esperado. Para servir como limite superior, será
+utilizado como base na política do passe diário da Divvy, em que o
+usuário pode utilizar uma mesma bicicleta por no máximo 3 horas, caso
+ultrapasse esse limite é cobrado taxas de tempo extra. Considerando
+ocasiões em que esse limite é ultrapassado, o limite superior para
+verificar essas anomalias será de 4 horas (14400 segundos).
+
+``` r
+# Conta a quantidade de viagens com duração superior a 4 horas
+trip_data_clean %>% 
+  select(started_at, ended_at, ride_length, ride_length_seconds) %>% 
+  filter(ride_length_seconds > 14400) %>% 
+  summarise(trips = n())
+```
+
+    ##   trips
+    ## 1  7597
+
+A análise aponta que **7597 viagens** ultrapassam o limite de 4 horas de
+duração. Novamente, para manter a consistência dos dados, esses
+registros serão removidos.
+
+``` r
+# Removendo os registros com as viagens inconsistentes
+trip_data_clean <- trip_data_clean %>% 
+  filter(ride_length_seconds < 14400)
+
+# Verificando a remoção dos registros
+trip_data_clean %>% 
+  select(started_at, ended_at, ride_length, ride_length_seconds) %>% 
+  filter(ride_length_seconds > 14400) %>% 
   summarise(trips = n())
 ```
 

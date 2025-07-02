@@ -26,4 +26,6 @@ Versão 1.1.0 (27/06/2025)
 
 ## New
 
-- Para manter a integridade dos dados, registros com duração de viagem inferior a 60 segundos, que possivelmente indicam falsos inícios ou tentativas de reencaixe da bicicleta na estação, foram removidos. 
+-   Para manter a integridade dos dados, registros com duração de viagem inferior a 60 segundos, que possivelmente indicam falsos inícios ou tentativas de reencaixe da bicicleta na estação, foram removidos.
+
+-   Por se trataram de viagens com bicicletas, é esperado que as viagens não possuam durações muito elevadas. Por conta disso, e tendo como base a política do diário da Divvy, em que o usuário pode utilizar uma mesma bicicleta por no máximo 3 horas (caso ultrapasse esse limite é cobrado taxas de tempo extra), foi adotado um limite de 4 horas como critério superior de corte. Dessa forma, todas as viagens com duração superior a 4 horas foram removidas do dataset.
