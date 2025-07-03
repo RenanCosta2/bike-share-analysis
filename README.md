@@ -64,15 +64,22 @@ Para efetuar a limpeza do dataset foram efetuadas as seguintes etapas:
 
 O processo completo está documentado no arquivo [`data_cleaning.Rmd`](data_cleaning/data_cleaning.Rmd), com a versão renderizada em [.md](data_cleaning/data_cleaning.md). Para mais detalhes sobre alterações e decisões, consulte também o [log de mudanças](data_cleaning/changelog.md).
 
-
 ## Exploração e Análise de Dados
 
-Na etapa de limpeza, os datasets mensais foram combinados em um único dataset, visto que todos possuem a mesma estrutura. O tamanho do arquivo `.csv` gerado ultrapassou 1GB, impossibilitando o seu upload direto no BigQuery. Para solucionar essa limitação foi armazenar o arquivo em um bucket no Google Cloud Storage, facilitando o acesso e o processamento dos dados na nuvem.
+Na etapa de limpeza, os datasets mensais foram combinados em um único dataset, visto que todos possuem a mesma estrutura. O tamanho do arquivo `.csv` gerado ultrapassou 1GB, impossibilitando o seu upload direto no BigQuery. 
 
-O armazenamento dos dados na nuvem possibilitou efetuar o carregamento dos dados do repositório, no Google Cloud Storage, para o BigQuery. Na execução desse processo, o BigQuery retornou um erro na atribuição do tipo `TIME` à coluna `ride_length`, pois, em alguns registros, a duração do tempo ultrapassa **24:00:00**, o que não é permitido nesse tipo, visto que o seu propósito é armazenar as horas de um dia.
-Por conta disso, foi necessário alterar o schema da tabela manualmente, em que o tipo da coluna `ride_length` foi alterado para o tipo textual `STRING`. 
+Para solucionar essa limitação o arquivo foi armazenado em um bucket no Google Cloud Storage, facilitando o acesso e o processamento dos dados na nuvem. O armazenamento na nuvem possibilitou efetuar o carregamento dos dados do repositório, no Google Cloud Storage, para o BigQuery.
 
-Essa alteração não impacta na análise dos dados já que o intuito dessa coluna é apenas para apresentação da informação. Os cálculos serão feitos com base na coluna numérica `ride_length_seconds`.
+A análise dos dados foi aplicada utilizando a linguagem SQL para manipulação e consultas complexas do conjunto de dados a fim de extrair insights relacionados aos padrões de uso das bicicletas entre ciclistas casuais e membros anuais. O processo completo da análise e os principais insights identificados estão documentados no arquivo disponível [aqui](data_analysis/README.md).
+
+
+
+
+
+
+
+
+
 
 
 
