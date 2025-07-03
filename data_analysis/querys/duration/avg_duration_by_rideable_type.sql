@@ -1,4 +1,4 @@
--- Recupera a m??dia da dura????o das viagens por tipo de transporte 
+-- Recupera a média da duração das viagens por tipo de transporte
 SELECT 
   rideable_type,
   TIME(TIMESTAMP_SECONDS(CAST(ROUND(AVG(ride_length_seconds)) AS INT64))) AS avg_ride_length,
