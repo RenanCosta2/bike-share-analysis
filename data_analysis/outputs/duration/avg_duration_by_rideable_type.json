@@ -1,0 +1,31 @@
+[{
+  "member_casual": "casual",
+  "rideable_type": "electric_bike",
+  "num_trips": "1042197",
+  "trips_percentage": "18.98"
+}, {
+  "member_casual": "casual",
+  "rideable_type": "classic_bike",
+  "num_trips": "864765",
+  "trips_percentage": "15.75"
+}, {
+  "member_casual": "casual",
+  "rideable_type": "electric_scooter",
+  "num_trips": "81428",
+  "trips_percentage": "1.48"
+}, {
+  "member_casual": "member",
+  "rideable_type": "electric_bike",
+  "num_trips": "1911179",
+  "trips_percentage": "34.8"
+}, {
+  "member_casual": "member",
+  "rideable_type": "classic_bike",
+  "num_trips": "1535955",
+  "trips_percentage": "27.97"
+}, {
+  "member_casual": "member",
+  "rideable_type": "electric_scooter",
+  "num_trips": "56131",
+  "trips_percentage": "1.02"
+}]

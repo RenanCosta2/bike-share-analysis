@@ -1,0 +1,145 @@
+[{
+  "year": "2024",
+  "month": "7",
+  "member_casual": "casual",
+  "avg_ride_length": "00:22:14",
+  "avg_ride_length_seconds": "1334.0"
+}, {
+  "year": "2024",
+  "month": "6",
+  "member_casual": "casual",
+  "avg_ride_length": "00:21:38",
+  "avg_ride_length_seconds": "1298.0"
+}, {
+  "year": "2024",
+  "month": "8",
+  "member_casual": "casual",
+  "avg_ride_length": "00:20:57",
+  "avg_ride_length_seconds": "1257.0"
+}, {
+  "year": "2025",
+  "month": "5",
+  "member_casual": "casual",
+  "avg_ride_length": "00:19:20",
+  "avg_ride_length_seconds": "1160.0"
+}, {
+  "year": "2024",
+  "month": "10",
+  "member_casual": "casual",
+  "avg_ride_length": "00:18:39",
+  "avg_ride_length_seconds": "1119.0"
+}, {
+  "year": "2024",
+  "month": "9",
+  "member_casual": "casual",
+  "avg_ride_length": "00:18:07",
+  "avg_ride_length_seconds": "1087.0"
+}, {
+  "year": "2025",
+  "month": "4",
+  "member_casual": "casual",
+  "avg_ride_length": "00:17:19",
+  "avg_ride_length_seconds": "1039.0"
+}, {
+  "year": "2025",
+  "month": "3",
+  "member_casual": "casual",
+  "avg_ride_length": "00:16:28",
+  "avg_ride_length_seconds": "988.0"
+}, {
+  "year": "2024",
+  "month": "11",
+  "member_casual": "casual",
+  "avg_ride_length": "00:14:46",
+  "avg_ride_length_seconds": "886.0"
+}, {
+  "year": "2024",
+  "month": "12",
+  "member_casual": "casual",
+  "avg_ride_length": "00:12:38",
+  "avg_ride_length_seconds": "758.0"
+}, {
+  "year": "2025",
+  "month": "2",
+  "member_casual": "casual",
+  "avg_ride_length": "00:11:25",
+  "avg_ride_length_seconds": "685.0"
+}, {
+  "year": "2025",
+  "month": "1",
+  "member_casual": "casual",
+  "avg_ride_length": "00:11:00",
+  "avg_ride_length_seconds": "660.0"
+}, {
+  "year": "2024",
+  "month": "6",
+  "member_casual": "member",
+  "avg_ride_length": "00:13:08",
+  "avg_ride_length_seconds": "788.0"
+}, {
+  "year": "2024",
+  "month": "7",
+  "member_casual": "member",
+  "avg_ride_length": "00:13:03",
+  "avg_ride_length_seconds": "783.0"
+}, {
+  "year": "2024",
+  "month": "8",
+  "member_casual": "member",
+  "avg_ride_length": "00:12:45",
+  "avg_ride_length_seconds": "765.0"
+}, {
+  "year": "2024",
+  "month": "9",
+  "member_casual": "member",
+  "avg_ride_length": "00:11:51",
+  "avg_ride_length_seconds": "711.0"
+}, {
+  "year": "2025",
+  "month": "5",
+  "member_casual": "member",
+  "avg_ride_length": "00:11:40",
+  "avg_ride_length_seconds": "700.0"
+}, {
+  "year": "2024",
+  "month": "10",
+  "member_casual": "member",
+  "avg_ride_length": "00:11:29",
+  "avg_ride_length_seconds": "689.0"
+}, {
+  "year": "2025",
+  "month": "4",
+  "member_casual": "member",
+  "avg_ride_length": "00:11:00",
+  "avg_ride_length_seconds": "660.0"
+}, {
+  "year": "2025",
+  "month": "3",
+  "member_casual": "member",
+  "avg_ride_length": "00:10:50",
+  "avg_ride_length_seconds": "650.0"
+}, {
+  "year": "2024",
+  "month": "11",
+  "member_casual": "member",
+  "avg_ride_length": "00:10:30",
+  "avg_ride_length_seconds": "630.0"
+}, {
+  "year": "2024",
+  "month": "12",
+  "member_casual": "member",
+  "avg_ride_length": "00:10:08",
+  "avg_ride_length_seconds": "608.0"
+}, {
+  "year": "2025",
+  "month": "2",
+  "member_casual": "member",
+  "avg_ride_length": "00:09:39",
+  "avg_ride_length_seconds": "579.0"
+}, {
+  "year": "2025",
+  "month": "1",
+  "member_casual": "member",
+  "avg_ride_length": "00:09:34",
+  "avg_ride_length_seconds": "574.0"
+}]

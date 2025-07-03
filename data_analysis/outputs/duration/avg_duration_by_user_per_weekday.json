@@ -1,0 +1,71 @@
+[{
+  "member_casual": "casual",
+  "day_of_week_name": "domingo",
+  "avg_ride_length": "00:22:18",
+  "avg_ride_length_seconds": "1338.0"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "sábado",
+  "avg_ride_length": "00:21:52",
+  "avg_ride_length_seconds": "1312.0"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "sexta-feira",
+  "avg_ride_length": "00:18:59",
+  "avg_ride_length_seconds": "1139.0"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "segunda-feira",
+  "avg_ride_length": "00:18:37",
+  "avg_ride_length_seconds": "1117.0"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "quinta-feira",
+  "avg_ride_length": "00:17:05",
+  "avg_ride_length_seconds": "1025.0"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "quarta-feira",
+  "avg_ride_length": "00:16:47",
+  "avg_ride_length_seconds": "1007.0"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "terça-feira",
+  "avg_ride_length": "00:16:38",
+  "avg_ride_length_seconds": "998.0"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "domingo",
+  "avg_ride_length": "00:13:00",
+  "avg_ride_length_seconds": "780.0"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "sábado",
+  "avg_ride_length": "00:12:55",
+  "avg_ride_length_seconds": "775.0"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "sexta-feira",
+  "avg_ride_length": "00:11:38",
+  "avg_ride_length_seconds": "698.0"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "quarta-feira",
+  "avg_ride_length": "00:11:26",
+  "avg_ride_length_seconds": "686.0"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "quinta-feira",
+  "avg_ride_length": "00:11:22",
+  "avg_ride_length_seconds": "682.0"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "terça-feira",
+  "avg_ride_length": "00:11:16",
+  "avg_ride_length_seconds": "676.0"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "segunda-feira",
+  "avg_ride_length": "00:11:14",
+  "avg_ride_length_seconds": "674.0"
+}]

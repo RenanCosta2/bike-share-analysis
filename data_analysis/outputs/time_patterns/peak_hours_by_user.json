@@ -1,0 +1,51 @@
+[{
+  "member_casual": "casual",
+  "hour": "17",
+  "num_trips": "188226",
+  "rank_trip": "1"
+}, {
+  "member_casual": "casual",
+  "hour": "16",
+  "num_trips": "176255",
+  "rank_trip": "2"
+}, {
+  "member_casual": "casual",
+  "hour": "18",
+  "num_trips": "161237",
+  "rank_trip": "3"
+}, {
+  "member_casual": "casual",
+  "hour": "15",
+  "num_trips": "156615",
+  "rank_trip": "4"
+}, {
+  "member_casual": "casual",
+  "hour": "14",
+  "num_trips": "141550",
+  "rank_trip": "5"
+}, {
+  "member_casual": "member",
+  "hour": "17",
+  "num_trips": "372132",
+  "rank_trip": "1"
+}, {
+  "member_casual": "member",
+  "hour": "16",
+  "num_trips": "327348",
+  "rank_trip": "2"
+}, {
+  "member_casual": "member",
+  "hour": "18",
+  "num_trips": "289791",
+  "rank_trip": "3"
+}, {
+  "member_casual": "member",
+  "hour": "8",
+  "num_trips": "245307",
+  "rank_trip": "4"
+}, {
+  "member_casual": "member",
+  "hour": "15",
+  "num_trips": "237860",
+  "rank_trip": "5"
+}]

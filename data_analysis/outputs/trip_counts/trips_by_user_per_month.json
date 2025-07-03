@@ -1,0 +1,121 @@
+[{
+  "year": "2024",
+  "month": "9",
+  "member_casual": "casual",
+  "num_trips": "333785"
+}, {
+  "year": "2024",
+  "month": "7",
+  "member_casual": "casual",
+  "num_trips": "308540"
+}, {
+  "year": "2024",
+  "month": "8",
+  "member_casual": "casual",
+  "num_trips": "306487"
+}, {
+  "year": "2024",
+  "month": "6",
+  "member_casual": "casual",
+  "num_trips": "288966"
+}, {
+  "year": "2024",
+  "month": "10",
+  "member_casual": "casual",
+  "num_trips": "209675"
+}, {
+  "year": "2025",
+  "month": "5",
+  "member_casual": "casual",
+  "num_trips": "175145"
+}, {
+  "year": "2025",
+  "month": "4",
+  "member_casual": "casual",
+  "num_trips": "105047"
+}, {
+  "year": "2024",
+  "month": "11",
+  "member_casual": "casual",
+  "num_trips": "90399"
+}, {
+  "year": "2025",
+  "month": "3",
+  "member_casual": "casual",
+  "num_trips": "82711"
+}, {
+  "year": "2024",
+  "month": "12",
+  "member_casual": "casual",
+  "num_trips": "37264"
+}, {
+  "year": "2025",
+  "month": "2",
+  "member_casual": "casual",
+  "num_trips": "26971"
+}, {
+  "year": "2025",
+  "month": "1",
+  "member_casual": "casual",
+  "num_trips": "23400"
+}, {
+  "year": "2024",
+  "month": "9",
+  "member_casual": "member",
+  "num_trips": "465446"
+}, {
+  "year": "2024",
+  "month": "8",
+  "member_casual": "member",
+  "num_trips": "429927"
+}, {
+  "year": "2024",
+  "month": "7",
+  "member_casual": "member",
+  "num_trips": "421582"
+}, {
+  "year": "2024",
+  "month": "6",
+  "member_casual": "member",
+  "num_trips": "401759"
+}, {
+  "year": "2024",
+  "month": "10",
+  "member_casual": "member",
+  "num_trips": "394408"
+}, {
+  "year": "2025",
+  "month": "5",
+  "member_casual": "member",
+  "num_trips": "313819"
+}, {
+  "year": "2025",
+  "month": "4",
+  "member_casual": "member",
+  "num_trips": "257764"
+}, {
+  "year": "2024",
+  "month": "11",
+  "member_casual": "member",
+  "num_trips": "238595"
+}, {
+  "year": "2025",
+  "month": "3",
+  "member_casual": "member",
+  "num_trips": "208320"
+}, {
+  "year": "2024",
+  "month": "12",
+  "member_casual": "member",
+  "num_trips": "137416"
+}, {
+  "year": "2025",
+  "month": "2",
+  "member_casual": "member",
+  "num_trips": "121998"
+}, {
+  "year": "2025",
+  "month": "1",
+  "member_casual": "member",
+  "num_trips": "112231"
+}]

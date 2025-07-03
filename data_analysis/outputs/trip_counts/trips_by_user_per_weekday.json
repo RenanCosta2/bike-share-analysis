@@ -1,0 +1,57 @@
+[{
+  "member_casual": "casual",
+  "day_of_week_name": "sábado",
+  "num_trips": "408448"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "domingo",
+  "num_trips": "331578"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "sexta-feira",
+  "num_trips": "307902"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "quinta-feira",
+  "num_trips": "251070"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "quarta-feira",
+  "num_trips": "241614"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "segunda-feira",
+  "num_trips": "232353"
+}, {
+  "member_casual": "casual",
+  "day_of_week_name": "terça-feira",
+  "num_trips": "215425"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "quarta-feira",
+  "num_trips": "556705"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "quinta-feira",
+  "num_trips": "546502"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "terça-feira",
+  "num_trips": "539024"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "sexta-feira",
+  "num_trips": "514379"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "segunda-feira",
+  "num_trips": "503347"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "sábado",
+  "num_trips": "456941"
+}, {
+  "member_casual": "member",
+  "day_of_week_name": "domingo",
+  "num_trips": "386367"
+}]

@@ -1,0 +1,16 @@
+[{
+  "start_station_name": "",
+  "num_trips": "1007490"
+}, {
+  "start_station_name": "Streeter Dr \u0026 Grand Ave",
+  "num_trips": "59955"
+}, {
+  "start_station_name": "Kingsbury St \u0026 Kinzie St",
+  "num_trips": "41085"
+}, {
+  "start_station_name": "DuSable Lake Shore Dr \u0026 Monroe St",
+  "num_trips": "40115"
+}, {
+  "start_station_name": "Michigan Ave \u0026 Oak St",
+  "num_trips": "36423"
+}]

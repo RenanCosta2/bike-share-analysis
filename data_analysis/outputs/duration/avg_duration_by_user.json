@@ -1,0 +1,9 @@
+[{
+  "member_casual": "casual",
+  "avg_ride_length": "00:19:19",
+  "avg_ride_length_seconds": "1159.0"
+}, {
+  "member_casual": "member",
+  "avg_ride_length": "00:11:46",
+  "avg_ride_length_seconds": "706.0"
+}]

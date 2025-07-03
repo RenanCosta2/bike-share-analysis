@@ -1,0 +1,51 @@
+[{
+  "member_casual": "casual",
+  "start_station_name": "",
+  "num_trips": "363047",
+  "rank_station": "1"
+}, {
+  "member_casual": "casual",
+  "start_station_name": "Streeter Dr \u0026 Grand Ave",
+  "num_trips": "46403",
+  "rank_station": "2"
+}, {
+  "member_casual": "casual",
+  "start_station_name": "DuSable Lake Shore Dr \u0026 Monroe St",
+  "num_trips": "31532",
+  "rank_station": "3"
+}, {
+  "member_casual": "casual",
+  "start_station_name": "Michigan Ave \u0026 Oak St",
+  "num_trips": "23097",
+  "rank_station": "4"
+}, {
+  "member_casual": "casual",
+  "start_station_name": "DuSable Lake Shore Dr \u0026 North Blvd",
+  "num_trips": "21114",
+  "rank_station": "5"
+}, {
+  "member_casual": "member",
+  "start_station_name": "",
+  "num_trips": "644443",
+  "rank_station": "1"
+}, {
+  "member_casual": "member",
+  "start_station_name": "Kingsbury St \u0026 Kinzie St",
+  "num_trips": "30824",
+  "rank_station": "2"
+}, {
+  "member_casual": "member",
+  "start_station_name": "Clinton St \u0026 Washington Blvd",
+  "num_trips": "25625",
+  "rank_station": "3"
+}, {
+  "member_casual": "member",
+  "start_station_name": "Clinton St \u0026 Madison St",
+  "num_trips": "23596",
+  "rank_station": "4"
+}, {
+  "member_casual": "member",
+  "start_station_name": "Clark St \u0026 Elm St",
+  "num_trips": "23484",
+  "rank_station": "5"
+}]
