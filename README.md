@@ -8,9 +8,9 @@ Para mais detalhes sobre o projeto consulte o documento original do estudo de ca
 
 Os analistas financeiros da Cyclist concluíram que os membros anuais são significativamente mais lucrativos do que os ciclistas casuais. Portanto, almejando um crescimento futuro da empresa, foi definido o objetivo de maximizar o número de membros anuais.
 
-Para atingir esse objetivo, será realizado uma análise dos dados para identificar as principais diferenças nos padrões de uso das bicicletas Cyclistic entre ciclistas casuais e membros anuais.
+Para atingir esse objetivo, foi realizado uma análise dos dados para identificar as principais diferenças nos padrões de uso das bicicletas Cyclistic entre ciclistas casuais e membros anuais.
 
-Os insights obtidos revelarão padrões de comportamento e preferências entre ciclistas casuais e membros anuais, permitindo a criação de estratégias de marketing direcionadas com maior chance de engajamento e conversão.
+Os insights obtidos revelaram padrões de comportamento e preferências entre ciclistas casuais e membros anuais, permitindo a criação de estratégias de marketing direcionadas com maior chance de engajamento e conversão.
 
 ## Descrição dos Dados
 
@@ -34,7 +34,7 @@ Cada registro representa uma viagem anonimizada, incluindo:
 
 Segundo a Divvy, os dados foram processados para remover viagens feitas pelos funcionários enquanto eles fazem a manutenção e inspecionam o sistema; e qualquer viagem com duração inferior a 60 segundos — consideradas como falsos inícios ou tentativas de reencaixe da bicicleta na estação.
 
-A Divvy disponibiliza dados de viagens desde o início de suas operações em 2013, com atualizações mensais contínuas. Neste projeto, serão utilizados os 12 datasets mais recentes disponíveis até o momento, abrangendo o período de junho de 2024 a maio de 2025.
+A Divvy disponibiliza dados de viagens desde o início de suas operações em 2013, com atualizações mensais contínuas. Neste projeto, foram utilizados os 12 datasets mais recentes disponíveis até o momento, abrangendo o período de junho de 2024 a maio de 2025.
 
 Devido ao seu tamanho, os arquivos não serão incluídos no repositório. Para utilizá-los localmente, siga as instruções abaixo para baixar os dados:
 
