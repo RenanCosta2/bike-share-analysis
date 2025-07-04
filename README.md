@@ -149,6 +149,6 @@ Para esta última etapa e finalização do projeto, o estudo de caso pede três 
 
 ## Considerações Finais
 
-Esse estudo de caso integra todo o ciclo de um projeto de análise de dados seguindo os passos fornecidos pelo Certificado Profissional de Análise de Dados do Google: **Ask**, **Prepare**, **Analyze**, **Share** e **Act**. Através destas etapas, foi conduzida uma análise detalhada de mais de 5 milhões de registros de viagens com bicicletas compartilhadas da Divvy. Essa análise permitiu identificar padrões de comportamento entre os ciclistas casuais e anuais, gerando insights com potencial para orientar decisões de negócio.
+Esse estudo de caso integra todo o ciclo de um projeto de análise de dados seguindo os passos fornecidos pelo Certificado Profissional de Análise de Dados do Google: **Ask**, **Prepare**, **Process**, **Analyze**, **Share** e **Act**. Através destas etapas, foi conduzida uma análise detalhada de mais de 5 milhões de registros de viagens com bicicletas compartilhadas da Divvy. Essa análise permitiu identificar padrões de comportamento entre os ciclistas casuais e anuais, gerando insights com potencial para orientar decisões de negócio.
 
 Este projeto consolidou minha capacidade de aplicar técnicas de análise de dados em um cenário real, com foco em geração de valor para o negócio.
