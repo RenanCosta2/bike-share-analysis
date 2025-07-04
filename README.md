@@ -12,6 +12,19 @@ Para atingir esse objetivo, foi realizado uma análise dos dados para identifica
 
 Os insights obtidos revelaram padrões de comportamento e preferências entre ciclistas casuais e membros anuais, permitindo a criação de estratégias de marketing direcionadas com maior chance de engajamento e conversão.
 
+## Tecnologias Utilizadas
+
+O projeto foi desenvolvido utilizando as seguintes ferramentas e tecnologias:
+
+- **Linguagem R**: Pré-processamento e limpeza dos dados.
+- **Google Cloud Storage**: Armazenamento do conjunto de dados na nuvem.
+- **BigQuery**: Armazenamento e análise dos dados em SQL.
+- **SQL**: Exploração e análise dos dados.
+- **Power BI**: Construção do dashboard e apresentação dos insights da análise de forma interativa.
+- **PowerPoint**: Construção da tela de fundo do dashboard.
+- **Markdown**: Documentação do projeto.
+- **Git / Github**: Versionamento do projeto.
+
 ## Descrição dos Dados
 
 Os dados utilizados nesse projeto são disponibilizados publicamente pela [Divvy](https://divvybikes.com/about), o sistema oficial de bicicletas compartilhadas da cidade de Chicago, operado atualmente pela Lyft.
