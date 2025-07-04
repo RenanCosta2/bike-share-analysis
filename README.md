@@ -110,11 +110,15 @@ Ao analisar o dashboard é possível extrair insights chaves, que destacam as pr
 
 - A duração média de viagem dos **ciclistas casuais (~ 19 minutos)** é relativamente maior que dos **membros (~ 12 minutos)**.
 
-- A frequência de uso do serviço é maior no período entre **junho e outubro**. A duração média das viagens apresentam um comportamento similar.
+- A frequência de uso do serviço é maior no período entre **junho e outubro**, o que coincide com os meses mais quentes e agradáveis em Chicago. A duração média das viagens apresentam um comportamento similar.
 
 - O comportamento semanal dos usuários é **oposto**: enquanto os **membros** tendem a usar o serviço com maior frequência nos **dias úteis**, os usuários **casuais** são predominantemente mais ativos nos **fins de semana**.
 
-- O horário de pico de ambos os usuários é por volta de **14 até 18 horas**. Porém, os **membros** também realizam um volume significativo de viagens no **início da manhã**, às 8:00.
+- O horário de pico de ambos os usuários é por volta de **14 até 18 horas**. Porém, os **membros** também realizam um volume significativo de viagens no **início da manhã**, às 8:00. 
+
+O comportamento de uso do serviço nos fins de semana em conjunto com a duração média de viagem superior, indica um perfil **recreativo** para os ciclistas **casuais**.
+
+Já a alta frequência de viagens nos dias úteis e nos horários de início da manhã e fim da tarde, aponta que os ciclistas **membros** utilizam o serviço como **meio de transporte**.
 
 ### Acesso e Compartilhamento
 
