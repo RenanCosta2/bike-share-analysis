@@ -72,7 +72,53 @@ Para solucionar essa limitação o arquivo foi armazenado em um bucket no Google
 
 A análise dos dados foi aplicada utilizando a linguagem SQL para manipulação e consultas complexas do conjunto de dados a fim de extrair insights relacionados aos padrões de uso das bicicletas entre ciclistas casuais e membros anuais. O processo completo da análise e os principais insights identificados estão documentados no arquivo disponível [aqui](data_analysis/README.md).
 
+## Visualizações e Principais Descobertas
 
+No curso de Análise de Dados do Google, a ferramenta de visualização apresentada é o Tableau. No entanto, por preferência pessoal e pela ausência de suporte a conexão com o BigQuery do Tableau Public Desktop, as visualizações desse projeto foram desenvolvidas utilizando o Microsoft Power BI.
+
+O objetivo do dashboard é identificar padrões de uso das bicicletas compartilhadas da Divvy, com foco em comportamentos distintos entre ciclistas casuais e membros anuais. A visualização foi contruída a partir do dataset extraído do repositório oficial da Divvy, abrangendo o período de junho de 2024 a maio de 2025, o qual, no decorrer desse projeto, foi limpo e tratado em R, exportado ao BigQuery e conectado ao Power BI.
+
+As principais métricas apresentadas no dashboard, com foco em uma análise comparativa entre os tipos de usuários, estão descritas abaixo:
+
+- **Total de Viagens**: Quantidade total de viagens realizadas.
+- **Duração Média**: Tempo médio por viagem.
+- **Duração Média Mensal e Semanal**: Matriz que exibe o tempo médio mensal e semanal por viagem.
+- **Viagens por Mês**: Distribuição mensal das viagens.
+- **Viagens por Dia da Semana**: Frequência semanal de viagens por tipo de usuário.
+- **Viagens por Horário do Dia**: Horários de pico de viagens por tipo de usuário.
+- **Viagens por Tipo de Transporte**: Preferência entre bicicletas clássicas, elétricas e scooters.
+
+O dashboard permite interação dinâmica por tipo de usuário, possibilitando alternar a visualização dos gráficos entre ciclistas casuais, membros ou visão geral.
+
+### Estilo e Design
+
+A paleta de cores utilizada no dashboard foi inspirada na identidade visual da Divvy. A tela de fundo, criada no PowerPoint, é um gradiente que tem como base o tom de azul (`#3CB4E5`) presente na logo da Divvy. 
+
+Os gráficos foram coloridos com cores harmoniosas e variações do azul da Divvy. As cores foram selecionadas a partir de paletas geradas em [color-hex.com](https://www.color-hex.com/)  e [mycolor.space](https://mycolor.space/). O ciclista membro é representado por um tom de verde vibrante (`#B4E53C`), enquanto o ciclista casual é identificado pelo verde água claro (`#62ECAF`). Esta última também foi usada como base para o gradiente que realça os meses e dias da semana com maior duração média na matriz de análise temporal.
+
+Para manter contraste visual adequado, o texto e ícones (obtidos em: [flaticon.com](https://www.flaticon.com/)) foram aplicados na cor branca.
+
+O storytelling do dashboard segue o conceito de leitura em "Z", no qual os olhos percorrem a tela da esquerda para a direita e de cima para baixo. Os elementos visuais foram organizados de forma a apresentar as informações mais relevantes primeiro, guiando o usuário de maneira intuitiva.
+
+A escolha estética visa reforçar a identidade visual da Divvy enquanto garante clareza e acessibilidade na apresentação das informações, como ilustrado na imagem abaixo.
+
+![image](https://github.com/user-attachments/assets/1dabea25-0e58-4178-b48e-9ad4d41a333e)
+
+### Insights
+
+Ao analisar o dashboard é possível extrair insights chaves, que destacam as principais diferenças nos padrões de comportamento dos ciclistas casuais e membros anuais.
+
+- A duração média de viagem dos **ciclistas casuais (~ 19 minutos)** é relativamente maior que dos **membros (~ 12 minutos)**.
+
+- A frequência de uso do serviço é maior no período entre **junho e outubro**. A duração média das viagens apresentam um comportamento similar.
+
+- O comportamento semanal dos usuários é **oposto**: enquanto os **membros** tendem a usar o serviço com maior frequência nos **dias úteis**, os usuários **casuais** são predominantemente mais ativos nos **fins de semana**.
+
+- O horário de pico de ambos os usuários é por volta de **14 até 18 horas**. Porém, os **membros** também realizam um volume significativo de viagens no **início da manhã**, às 8:00.
+
+### Acesso e Compartilhamento
+
+O dashboard foi publicado no Power BI Service e está disponível publicamente na web. Para acessar e interagir com o dashboard clique [aqui](https://app.powerbi.com/view?r=eyJrIjoiMWU4MmQ5Y2EtYjU2Mi00Y2RmLTkzYzUtNDEzMTZjZjk1NTNiIiwidCI6ImJhZTkwYjYxLTg4OTItNDQyMC1hMTEyLTE0NTQ4MzBkYmJiOSJ9).
 
 
 
